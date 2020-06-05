@@ -1,0 +1,8 @@
+*.swp
+*~
+*/bin
+*obj/
+.vs/
+packages/
+*.user
+*.tgz
