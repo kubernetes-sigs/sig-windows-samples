@@ -1,0 +1,18 @@
+apiVersion: v1
+name: fabrikamfiber
+version: 0.2.0
+appVersion: 0.2.0
+description: FabrikamFiber ticketing system
+icon: https://github.com/PatrickLang/fabrikamfiber/blob/master/FabrikamFiber.Web/Content/images/logo.png?raw=true
+keywords:
+- windows
+- .net framework
+- application
+- sql
+home: https://github.com/patricklang/fabrikamfiber
+sources:
+- https://github.com/patricklang/fabrikamfiber
+maintainers:
+- name: Patrick Lang
+  email: patrick.lang@microsoft.com
+engine: gotpl
