@@ -55,4 +55,20 @@
            - 1903 
            - 20H2 
            - 1909 
-           - 2004 
+           - 2004
+           - 
+#### image-builder + friedrich's project update
+- Freidrich
+    - https://github.com/kubernetes-sigs/sig-windows-tools/issues/145
+    - https://github.com/kubernetes-sigs/sig-windows-tools/blob/master/kubeadm/scripts/PrepareNode.ps1 <- cni agnostic
+- https://docs.projectcalico.org/getting-started/windows-calico/kubernetes/standard
+    - containerd 
+        - kubelet needs CNI to start init pods
+        - antrea broke the NAT network
+    - images/packer/capi/ova/windows
+        - has image builder logic for creating ova
+        - friedrichs project ~ likely will live bootstrap unless a good reason to use img builder
+        - NExt step ~ vagrant ps1 commands
+    - https://github.com/vmware-tanzu/antrea/pull/1968 <- antrea containerd docs
+
+#### 
