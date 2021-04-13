@@ -88,13 +88,14 @@
 #### 4/13
     - rancher is here ! hayden ~ liason w/ sig-security
     - friedrich + Slaydn teaming up on windows dev environments
-    - SourceVip
+    - SourceVip ~ overlay CNI providers ~ need updated SDN version thanks to rancher for providing it to friedrich
         - friedrich/sladyn ~ sourcevip command fails, workaround https://gist.github.com/rosskirkpat/063416fdf5512adc99fab85a411f7947 
         - webhook tests fail w/ it 
     - https://github.com/FriedrichWilken/KubernetesOnWindows/issues/3
     - hayden barnes is a General Hospital character
     - https://github.com/kubernetes/kubernetes/issues/101062
     - https://github.com/kubernetes/website/pull/12182
+    - friedrich's project graduates from 'learning' to USEFUL !
 ```
        300 conformance tests
 
