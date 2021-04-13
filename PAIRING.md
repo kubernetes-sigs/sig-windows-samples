@@ -26,6 +26,7 @@
 - calico: host-local ipam + route tables + vxlan vs ovs 
 
 #### multi arch docker images
+
 - https://perithompson.netlify.app/blog/creating-multiarch-containers/
 - oci spec
     - manifest list
@@ -58,6 +59,7 @@
            - 2004
            - 
 #### image-builder + friedrich's project update
+
 - Freidrich
     - https://github.com/kubernetes-sigs/sig-windows-tools/issues/145
     - https://github.com/kubernetes-sigs/sig-windows-tools/blob/master/kubeadm/scripts/PrepareNode.ps1 <- cni agnostic
@@ -71,4 +73,48 @@
         - NExt step ~ vagrant ps1 commands
     - https://github.com/vmware-tanzu/antrea/pull/1968 <- antrea containerd docs
 
-#### 
+#### image builder part 2 + friedrichs project updates
+- powershell via a makefile is triggering vagrant stuff
+- triage
+    - https://github.com/kubernetes/kubernetes/issues/82532 <-- james azure (move to project boardthingy)
+    - https://github.com/kubernetes/kubernetes/issues/93945 <-- iis 10mb, seems like a non issue, weird use case
+    - https://github.com/kubernetes/kubernetes/issues/100384 <-- critical kube proxy bug ELBs
+    - https://github.com/kubernetes/kubernetes/issues/96428 <-- os bug that mark is working on
+    - https://github.com/kubernetes/kubernetes/issues/96935 <-- ravi working on it, need to ping
+    - https://github.com/kubernetes/kubernetes/issues/96996 <-- kayla , flannel non-nodeipam issue low prio, why not use nodeipam? 
+    - https://github.com/kubernetes/kubernetes/issues/98102 -> https://github.com/containerd/containerd/issues/5188
+    - 
+
+#### 4/13
+    - rancher is here ! hayden ~ liason w/ sig-security
+    - friedrich + Slaydn teaming up on windows dev environments
+    - SourceVip
+        - friedrich/sladyn ~ sourcevip command fails, workaround https://gist.github.com/rosskirkpat/063416fdf5512adc99fab85a411f7947 
+        - webhook tests fail w/ it 
+    - https://github.com/FriedrichWilken/KubernetesOnWindows/issues/3
+    - hayden barnes is a General Hospital character
+    - https://github.com/kubernetes/kubernetes/issues/101062
+    - https://github.com/kubernetes/website/pull/12182
+```
+       300 conformance tests
+
+       test: pod1 ---->  hostport pod2
+       test: pod1 ---->  nodeport -> pod2
+       test: pod1 ---->  clusterip -> pod2
+       
+        SUCCESS
+
+            n1 n2 n3 n4 n5
+            p1 
+            p2
+
+        FAIL
+
+            n1 n2 n3 n4 n5
+               p1 
+            p2
+```
+    
+    
+
+
