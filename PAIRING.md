@@ -88,14 +88,13 @@
 #### 4/13
     - rancher is here ! hayden ~ liason w/ sig-security
     - friedrich + Slaydn teaming up on windows dev environments
-    - SourceVip ~ overlay CNI providers ~ need updated SDN version thanks to rancher for providing it to friedrich
+    - SourceVip
         - friedrich/sladyn ~ sourcevip command fails, workaround https://gist.github.com/rosskirkpat/063416fdf5512adc99fab85a411f7947 
         - webhook tests fail w/ it 
     - https://github.com/FriedrichWilken/KubernetesOnWindows/issues/3
     - hayden barnes is a General Hospital character
     - https://github.com/kubernetes/kubernetes/issues/101062
     - https://github.com/kubernetes/website/pull/12182
-    - friedrich's project graduates from 'learning' to USEFUL !
 ```
        300 conformance tests
 
@@ -115,7 +114,91 @@
                p1 
             p2
 ```
-    
-    
+#### 4/20
+- cbr0: the way flannel defines host bridges
+- sdn_overlay vs win-overlay : cni executable, 2 sources of truth 
+- cni config json (windows):
+    - plugin:
+        - docker
+            - docker nat
+                - kube proxy
+                - ...            
+            - overlay
+                - main plugin (winbridge, winoverlay)
+                - metaplugin (flannel) 
+        - containerd
+            - overlay
+- https://www.cni.dev/plugins/current/main/win-overlay/
+- https://www.cni.dev/plugins/current/meta/flannel/
+- https://gist.github.com/rosskirkpat/568b6b8ad8c5083d0dfec5c46628c453
+- bare minimal flannel -> NeedEncap=true (hns) for overlays + note 10./ is encap.
+```
+{
+	"name": "vxlan0",
+	"type": "flannel",
+	"ipMasq": true,
+	"ipam": {
+		"type": "host-local",
+		"subnet": "10.42.2.0/24"
+	},       
+    "capabilites": {
+        "dns": true
+    },    
+	"delegate": {
+		"type": "win-overlay"
+    },
+    "Policies" : [
+        {
+          "Name" : "EndpointPolicy", "Value" : { "Type" : "OutBoundNAT", "ExceptionList": [ "10.42.0.0/16","10.43.0.0/16" ] }
+        },
+        {
+          "Name" : "EndpointPolicy", "Value" : { "Type" : "ROUTE", "DestinationPrefix": "10.0.0.0/8", "NeedEncap" : true }
+        }
+      ]    
+}
+```
+- next time , need to dig around on more CNI stuff 
 
+## 5/4
 
+- updating dev environments to use containerd.
+- Running the containerd.ps1 script twice    
+- -FeatureName Micosoft Hper-V Management -PowerShell
+- CPU silently crashing in background
+
+### signal
+
+https://testgrid.k8s.io/
+https://testgrid.k8s.io/sig-windows-signal
+(testgrid bug , status not up to date)
+
+### finding a flake source... 
+
+- https://github.com/kubernetes/kubernetes/blob/9126048c9c47cc51f15f977da51c6023229a02b5/test/e2e/common/node/container_probe.go#L659
+
+- to learn more, check out flakey fridays (youtube)
+- worth looking at this https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/flaky-tests.md#deflaking-e2e-tests 
+
+- sig-windows log scraping: pdsh style collector
+
+https://github.com/kubernetes-sigs/windows-testing/blob/master/scripts/win-ci-logs-collector.sh
+
+- https://github.com/kubernetes-sigs/cluster-api-provider-azure/pull/1351/files 
+
+# 5/11
+
+- flannel , containerd on windows
+    - need to run as an agent (no Docker NAT network available, thus no hostNet pods to bootstrap)
+    - containerd host pods:
+        - cni pods fail b/c "hostNetwork" docker hack doesnt work
+        - containerd can't bootsrap cni pods, chicken or egg
+        - solution: check sandbox for hostProcess
+            - if hostProcess + windows -> create pod
+                - because containerd knows how to put stuff on hostNetwork!
+        - https://github.com/containerd/containerd/pull/5131/files
+    - old GCE Kubeadm job
+        - unmaintained ~ replacement for it?
+    - how to NSSM a CNI provider?
+        - https://github.com/vmware-tanzu/antrea/blob/main/docs/windows.md 
+- @slayden might want to try hot swapping the kubelet binary / kube proxy binary
+        - https://github.com/kubernetes/community/blob/master/sig-windows/CONTRIBUTING.md#building-kubernetes-binaries-for-windows
