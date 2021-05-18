@@ -202,3 +202,12 @@ https://github.com/kubernetes-sigs/windows-testing/blob/master/scripts/win-ci-lo
         - https://github.com/vmware-tanzu/antrea/blob/main/docs/windows.md 
 - @slayden might want to try hot swapping the kubelet binary / kube proxy binary
         - https://github.com/kubernetes/community/blob/master/sig-windows/CONTRIBUTING.md#building-kubernetes-binaries-for-windows
+
+# 5/15
+- james: https://github.com/kubernetes-sigs/windows-gmsa/pull/31 
+    - v1beta1 -> v1 for GMSA in 1.22 needed to be upgraded
+    - but for cert-request `kind: CertificateSigningRequest` sig-auth, couldnt easily craft the request to work with the new apiVersion
+- slayden: dynamic compilation of kubelet.exe and kube-proxy exe into dev environments https://github.com/FriedrichWilken/KubernetesOnWindows
+- Self-registering antrea service https://github.com/antrea-io/antrea/issues/2187 ! might be a good hack project for someone interested in CNIs.
+    - https://github.com/antrea-io/antrea/blob/main/docs/windows.md#installation-as-a-service-containerd-based-runtimes 
+
