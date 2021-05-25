@@ -204,6 +204,7 @@ https://github.com/kubernetes-sigs/windows-testing/blob/master/scripts/win-ci-lo
         - https://github.com/kubernetes/community/blob/master/sig-windows/CONTRIBUTING.md#building-kubernetes-binaries-for-windows
 
 # 5/15
+
 - james: https://github.com/kubernetes-sigs/windows-gmsa/pull/31 
     - v1beta1 -> v1 for GMSA in 1.22 needed to be upgraded
     - but for cert-request `kind: CertificateSigningRequest` sig-auth, couldnt easily craft the request to work with the new apiVersion
@@ -211,3 +212,29 @@ https://github.com/kubernetes-sigs/windows-testing/blob/master/scripts/win-ci-lo
 - Self-registering antrea service https://github.com/antrea-io/antrea/issues/2187 ! might be a good hack project for someone interested in CNIs.
     - https://github.com/antrea-io/antrea/blob/main/docs/windows.md#installation-as-a-service-containerd-based-runtimes 
 
+# 5/25
+
+- friedrich is recovering from his injury
+- How windows vs linux objects coexist in golang
+    - https://github.com/kubernetes/kubernetes/tree/master/cmd/kube-proxy/app
+    - https://github.com/antrea-io/antrea/cmd/antrea-agent/options.go
+    - https://billg.sqlteam.com/2018/07/17/running-go-as-a-windows-service/
+    - https://github.com/golang/sys/blob/master/windows/svc/example/service.go
+    - https://github.com/judwhite/go-svc
+- community repo on the way https://github.com/kubernetes/org/issues/2721
+- GMSA how its setup
+    - webhook makes it easy to run pods that reference GMSA CRDs
+        - https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster <-- prerequisite for understanding the GMSA flow
+        - file = output file.. `curl -sL  k8s.io/..../deploy-gmsa-webhook.sh | bash -s -- --file webhook-manifests.yml`
+            - deploy-gmsa-webhook.sh
+                - create-signed-cert.sh <-- good to try to read understand this 
+                    - apiserver signs
+            - But why do we need a k8s webhook for the kubelet?
+                - json serialize -> kubelet pulls it -> pod spec
+                - webhook makes it easy to define the JSON as a k8s CRD
+                    - when pod matches the GMSA in a CRD, webhook modifies pod to integrate the CRD
+    - example of how to look at a windows flake
+        - https://prow.k8s.io/view/gs/kubernetes-jenkins/logs/ci-kubernetes-e2e-aks-engine-azure-1-20-windows-containerd/1396143134877945856
+            - https://github.com/kubernetes/kubernetes/blob/master/test/e2e/apimachinery/crd_publish_openapi.go#L66 
+                - interesting test - confirms `kubectl` behaviour validity for CRDs
+    - grep.app
