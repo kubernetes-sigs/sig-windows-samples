@@ -238,3 +238,29 @@ https://github.com/kubernetes-sigs/windows-testing/blob/master/scripts/win-ci-lo
             - https://github.com/kubernetes/kubernetes/blob/master/test/e2e/apimachinery/crd_publish_openapi.go#L66 
                 - interesting test - confirms `kubectl` behaviour validity for CRDs
     - grep.app
+    - claudio:
+        - liveness probes, readiness probes for windows nodes
+        - pre-stop post-start exec hooks dont work on flannel overlay
+            - windows overlay dont allow nodes -> pod connectivity
+
+# 6/1 
+
+- james AD testing
+    - gmsa_kubelet.go
+        - NLTest `/parentdomain` making sure that kubelet returns stuff
+    - gmsa_full.go
+        - full on gmsa test that involves confirming that the ability (generate correct  GMSA CRDs and push them)
+    - GMSA Component installation
+- peri ~ NetLOGON: 
+    - a folder thats on every AD controller, contains group policies + files 
+    - AD Controller = windows server playing AD controller role
+- ks/windows-testing
+    - gmsa-dc : turn node into dc
+    - gmsa-member: join a node to a domai
+      - outputs: 
+          - admin.txt
+          - gmsa-cred-spec-gmsa-e2e.txt
+- windows-gmsa/
+    - james modernizing it
+        - use newer go cli
+- Could you add a GMSA spec to a linux node ? WHY NOT!?!?!?
