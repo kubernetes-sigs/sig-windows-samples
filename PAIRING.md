@@ -263,4 +263,27 @@ https://github.com/kubernetes-sigs/windows-testing/blob/master/scripts/win-ci-lo
 - windows-gmsa/
     - james modernizing it
         - use newer go cli
-- Could you add a GMSA spec to a linux node ? WHY NOT!?!?!?
+
+
+# 6/8
+- Windows dev environment hacking 
+    - official dev env : code complete , 
+        - waiting on Friedrich's CLA
+    - Why does windows have 2 ETH adaptors 
+    ```Ethernet adapter Ethernet:
+
+       Connection-specific DNS Suffix  . : 
+       Link-local IPv6 Address . . . . . : fe80::6cb5:fdde:294b:118b%4
+       IPv4 Address. . . . . . . . . . . : 10.0.2.15
+       Subnet Mask . . . . . . . . . . . : 255.255.255.0
+       Default Gateway . . . . . . . . . : 10.0.2.2
+
+    Ethernet adapter Ethernet 2:
+
+       Connection-specific DNS Suffix  . : 
+       Link-local IPv6 Address . . . . . : fe80::4019:f73d:2675:fa51%7
+       IPv4 Address. . . . . . . . . . . : 10.20.30.11
+       Subnet Mask . . . . . . . . . . . : 255.255.255.0
+       Default Gateway . . . . . . . . . : 
+    ```
+    - https://github.com/kubernetes-sigs/cluster-api-provider-azure/blob/d31799bf430454983ed426b482610ad9d080840c/templates/flavors/ipv6/patches/kubeadm-controlplane.yaml 
