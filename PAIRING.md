@@ -286,4 +286,5 @@ https://github.com/kubernetes-sigs/windows-testing/blob/master/scripts/win-ci-lo
        Subnet Mask . . . . . . . . . . . : 255.255.255.0
        Default Gateway . . . . . . . . . : 
     ```
-    - https://github.com/kubernetes-sigs/cluster-api-provider-azure/blob/d31799bf430454983ed426b482610ad9d080840c/templates/flavors/ipv6/patches/kubeadm-controlplane.yaml 
+    - https://github.com/kubernetes-sigs/cluster-api-provider-azure/blob/d31799bf430454983ed426b482610ad9d080840c/templates/flavors/ipv6/patches/kubeadm-controlplane.yaml
+    - Node Problem Detector: running it in windows outside of GCE.  Maybe a good use case for the dev recipes.
