@@ -271,6 +271,26 @@ https://github.com/kubernetes-sigs/windows-testing/blob/master/scripts/win-ci-lo
         - waiting on Friedrich's CLA
     - Why does windows have 2 ETH adaptors 
     ```Ethernet adapter Ethernet:
+    
+# 6/22
+How to pull the ci/ staging images.... 
+- https://github.com/kubernetes-sigs/cluster-api-provider-azure/blob/master/templates/test/dev/custom-builds/patches/custom-builds.yaml 
+- USE THIS ! to run kubeadm at the tip .... 
+```
+
+func TestSplitVersion(t *testing.T) {
+	type T struct {
+		input  string
+		bucket string
+		label  string
+		valid  bool
+	}
+	cases := []T{
+		// Release area
+		{"ci/latest", "https://storage.googleapis.com/k8s-release-dev/ci", "latest", true},
+        ...
+	}
+```
 
        Connection-specific DNS Suffix  . : 
        Link-local IPv6 Address . . . . . : fe80::6cb5:fdde:294b:118b%4
