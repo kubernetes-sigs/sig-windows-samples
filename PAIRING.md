@@ -319,3 +319,6 @@ Windows-dev environments:
 - james once got containerd working on windows 10, but that doesnt work anymore bc of 21H1... :( 
 - `winw1: Download file, try ( 1 )  [[[ https://k8stestinfrabinaries.blob.core.windows.net/nssm-mirror/nssm-2.24.zip ]]]`
 - in 1.23, bunch of changes coming for `hostProcess` containers, which will modify the install-containerd.ps1 and preparenode.ps1 files.
+- defining hyper-v addresses in vagrant is ignored.  need to decide wether virtualbox->hyperv, hyperv, or vmware workstation is the ideal solution for windows laptops
+- added vagrant/robox as the linux base image bc its compatible w/ all hypervisors
+- `    winw1: Waiting for Calico initialisation to finish...StoredLastBootTime , CurrentLastBootTime 20210713111004.900955-420` <-- calico windows seems to slow down at this stage, but not sure why... 
