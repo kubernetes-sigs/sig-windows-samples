@@ -308,3 +308,14 @@ func TestSplitVersion(t *testing.T) {
     ```
     - https://github.com/kubernetes-sigs/cluster-api-provider-azure/blob/d31799bf430454983ed426b482610ad9d080840c/templates/flavors/ipv6/patches/kubeadm-controlplane.yaml
     - Node Problem Detector: running it in windows outside of GCE.  Maybe a good use case for the dev recipes.
+    
+    
+# 7/13
+
+Windows-dev environments:
+- calico issue , wonder if its VNIC related, https://github.com/containerd/containerd/issues/5729 
+- compiling k8s on WSL2 for dev envs
+- if anyone is crazy enough to run windows server on a laptop heres how https://jayunit100.blogspot.com/2021/03/connecting-my-dell-precision-5540-on.html 
+- james once got containerd working on windows 10, but that doesnt work anymore bc of 21H1... :( 
+- `winw1: Download file, try ( 1 )  [[[ https://k8stestinfrabinaries.blob.core.windows.net/nssm-mirror/nssm-2.24.zip ]]]`
+- in 1.23, bunch of changes coming for `hostProcess` containers, which will modify the install-containerd.ps1 and preparenode.ps1 files.
