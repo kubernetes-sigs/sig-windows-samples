@@ -328,3 +328,7 @@ Windows-dev environments:
 - Bart demo'd that hes having issues around anonymous permissions / network login in terms of browsing directories
   - powershell exectution policies C:/forked/Install-Containerd.ps1
 
+# 7/27
+
+- filed https://github.com/kubernetes-sigs/sig-windows-dev-tools/issues/64 to investigate pause image 
+- starting calico felix seems to get CNI working but vagrant hangs... 
