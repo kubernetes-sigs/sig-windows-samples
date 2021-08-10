@@ -332,3 +332,19 @@ Windows-dev environments:
 
 - filed https://github.com/kubernetes-sigs/sig-windows-dev-tools/issues/64 to investigate pause image 
 - starting calico felix seems to get CNI working but vagrant hangs... 
+
+# 8/10
+
+- How pause images work : is the "infra" pause container somehow, or somewhere, referenced in the OCI specification ? 
+- Why does friedrich not have a route to a pod network on his VM ? https://github.com/kubernetes-sigs/sig-windows-dev-tools/issues/73 ...
+maybe because its in the `notReady` state ? Check calico and kube proxy logs...
+	- linux node up
+	- calico (node + felix) on linux up
+	- linux node is "ready"
+	- windows node up
+	- windows node joins cluster <--- this is where you are friedrich !
+	- calico node on windows installed 
+	- calico felix on windows is installed 
+	- calico node is "ready"
+	- calico routes are broadcast to linux node
+
