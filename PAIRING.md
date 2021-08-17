@@ -347,4 +347,13 @@ maybe because its in the `notReady` state ? Check calico and kube proxy logs...
 	- calico felix on windows is installed 
 	- calico node is "ready"
 	- calico routes are broadcast to linux node
+# 8/17
+
+- looking at https://github.com/kubernetes/kubernetes/blob/master/test/e2e/windows/kubelet_stats.go 
+  - https://onsi.github.io/ginkgo/ 
+- windows conformance tests https://hackmd.io/yLR7i97KTICIrVBrE5kOCQ 
+- use `--ginkgo.dryRun` to determine what tests would/wont run `➜  kubernetes git:(master) make WHAT=test/e2e/e2e.test`
+- no more REPO_LIST required for `e2e.test` yay thank you claudio !
+- claudio made a mediocre joke !
+- what permissions do windows pods support ?
 
