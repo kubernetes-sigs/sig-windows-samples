@@ -377,6 +377,7 @@ maybe because its in the `notReady` state ? Check calico and kube proxy logs...
   - problem: we were binding the calico vxlan to the primary Ethernet device
     - solution: https://github.com/projectcalico/node/pull/1166/files (forked in the dev environments)
 - mark : https://github.com/antrea-io/antrea/issues/ <-- need to file upstream signed request?
+  - https://github.com/antrea-io/antrea/issues/2638 	
 - hostProcesses pods
   - Danny investigating hostProcess volume mounts for svc accts 
     - internal containers (C:/...) <-- predictable paths
