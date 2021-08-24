@@ -347,6 +347,7 @@ maybe because its in the `notReady` state ? Check calico and kube proxy logs...
 	- calico felix on windows is installed 
 	- calico node is "ready"
 	- calico routes are broadcast to linux node
+
 # 8/17
 
 - looking at https://github.com/kubernetes/kubernetes/blob/master/test/e2e/windows/kubelet_stats.go 
@@ -357,3 +358,27 @@ maybe because its in the `notReady` state ? Check calico and kube proxy logs...
 - claudio made a mediocre joke !
 - what permissions do windows pods support ?
 
+# 8/24
+
+- @friedrich image-builder?
+- @amim on calico fixes?
+  - Why do we get ServiceMonitor.exe ??? WHAT IS IT???
+    - iis used to be a VM service on physical machines
+    - Tuning etc... used to rely on env vars
+    - ServiceMonitor is the iis entrypoint that reads env vars into IIS subprocesses
+      - always needed UNLESS your not actually using environment variables... 
+    - SHOULD BE included by default in images, but its not?
+- https://github.com/jsturtevant/windows-k8s-playground/blob/master/deployments/iis/iis-prewarm.yaml <-- better smoke test , 30,40,50 seconds to make sure 
+- image-builder
+  - preload nanoserver
+  - preload iis
+- Calico fix https://github.com/kubernetes-sigs/sig-windows-dev-tools/commit/4b801d8fed10417c80d3380e94d4a7e6618305c5 
+  - using node ip so that were doing all coms on the private vbox network, no more being lost in the vbox NAT ip.
+  - problem: we were binding the calico vxlan to the primary Ethernet device
+    - solution: https://github.com/projectcalico/node/pull/1166/files (forked in the dev environments)
+- mark : https://github.com/antrea-io/antrea/issues/ <-- need to file upstream signed request?
+- hostProcesses pods
+  - Danny investigating hostProcess volume mounts for svc accts 
+    - internal containers (C:/...) <-- predictable paths
+    - hostprocess containers C:/C/guid <-- not predictable path 
+    - makes it hard to run any apiserver or CNI processes in containers
