@@ -383,3 +383,10 @@ maybe because its in the `notReady` state ? Check calico and kube proxy logs...
     - internal containers (C:/...) <-- predictable paths
     - hostprocess containers C:/C/guid <-- not predictable path 
     - makes it hard to run any apiserver or CNI processes in containers
+
+# 8/31 
+
+- welcome to @nick 
+- new antrea version should allow us to set the interface
+- interesting that antrea node's node-ip address CHANGES during installation.  must be due to the way the antrea-agent bootstrap works.
+- welcome to @scott rosenberg 
