@@ -405,3 +405,14 @@ maybe because its in the `notReady` state ? Check calico and kube proxy logs...
    - root cause ~ antrea ovs binary not installed... 
 - `BoundedFrequencyRunner` is the actual underlying thing that rewrites all the lb rules for kube-proxy, and the existing
 handleers for Add/Update/ endpointSlices are only there to update the data structures.
+- Test signing enabled? Heres how to check: 
+```
+PS C:\Users\vagrant> bcdedit.exe -v
+... 
+recoveryenabled         Yes
+testsigning             Yes <----------------- this should gaurantee that antrea can run unsigned
+allowedinmemorysettings 0x15000075
+osdevice                partition=C:
+...
+hypervisorlaunchtype    Auto
+```
