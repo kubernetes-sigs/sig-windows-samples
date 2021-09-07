@@ -390,3 +390,18 @@ maybe because its in the `notReady` state ? Check calico and kube proxy logs...
 - new antrea version should allow us to set the interface
 - interesting that antrea node's node-ip address CHANGES during installation.  must be due to the way the antrea-agent bootstrap works.
 - welcome to @scott rosenberg 
+
+# 9/7
+- no MAJOR issues on https://testgrid.k8s.io/sig-windows-signal#aks-engine-windows-containerd-1.22 other then some curl exit codes
+  - flakes on ` Services should be able to create a functioning NodePort service for Windows `
+    - possibly all related to HNS network blackout?  
+    - @adelina : not sure...because this was resolved  ? regression? who knows :)
+  - list of flakes....
+	    - command terminated with exit code 7: because Networking not setup ? but HNS is created... 
+	    - command terminated with exit code 6: more common, 
+	    - command terminated with exit code 28: firewall timeouts?
+	    - command terminated with exit code 56: ...  
+-  "transport: Error while dialing open \\\\.\\pipe\\cnisock: The system cannot find the file specified." 
+   - root cause ~ antrea ovs binary not installed... 
+- `BoundedFrequencyRunner` is the actual underlying thing that rewrites all the lb rules for kube-proxy, and the existing
+handleers for Add/Update/ endpointSlices are only there to update the data structures.
