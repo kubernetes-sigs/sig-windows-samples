@@ -416,3 +416,4 @@ osdevice                partition=C:
 ...
 hypervisorlaunchtype    Auto
 ```
+- `sc.exe query | findstr.exe /s /i /c:"open"` <-- how to grep in windows
