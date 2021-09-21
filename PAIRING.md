@@ -417,3 +417,25 @@ osdevice                partition=C:
 hypervisorlaunchtype    Auto
 ```
 - `sc.exe query | findstr.exe /s /i /c:"open"` <-- how to grep in windows
+
+# 9/21/2021
+
+- releases for YAMLs have slipped and now its just the nightly builds that are maintained.
+  - kubeadm hack for docker, not needed anymore
+  - need to remove these flannel references since containerd
+  - are we going to support `wins` as a sig ? 
+  - future: host-process beta containers
+  - current: run windows kube-proxy as a NSSM service
+- ross ~ wether wins is required for the future, not sure
+- https://github.com/kubernetes/website/issues/29769
+- https://github.com/kubernetes-sigs/cluster-api-provider-azure/pull/1672/files <-- @james 
+  - upstreaming calico YAML 
+- hostProcess e2es
+  - named pipe mounts: not supported for hostProcess, hostPath instead
+    - unix domain socket mounts, not supported but it IS supported on regular win containers (i.e. csi proxy)
+    - csi proxy; grpc over named pipes
+  - named pipes in hostProc can be accessed... directly, no need for mounting them
+- recognizing CAPI objects for a cluster 
+- calico node, felix....
+  - node : start-process, starts felix, 
+  - felix :  does felix talk to the apiserver or does it do some kind of comms w/ node ???
