@@ -445,4 +445,4 @@ hypervisorlaunchtype    Auto
 
 - https://github.com/microsoft/hcsshim/issues/1056 <-- how does hcsshhim wrap errors?
 - imagebuilder presentation by knabben https://github.com/kubernetes-sigs/sig-windows-dev-tools/tree/master/experiments/image-builder 
-
+- do we need to install `vagrant plugin install vagrant-vbguest`
