@@ -439,3 +439,10 @@ hypervisorlaunchtype    Auto
 - calico node, felix....
   - node : start-process, starts felix, 
   - felix :  does felix talk to the apiserver or does it do some kind of comms w/ node ???
+
+
+# 9/28/2021
+
+- https://github.com/microsoft/hcsshim/issues/1056 <-- how does hcsshhim wrap errors?
+- imagebuilder presentation by knabben
+
