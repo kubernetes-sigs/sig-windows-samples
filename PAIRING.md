@@ -446,3 +446,29 @@ hypervisorlaunchtype    Auto
 - https://github.com/microsoft/hcsshim/issues/1056 <-- how does hcsshhim wrap errors?
 - imagebuilder presentation by knabben https://github.com/kubernetes-sigs/sig-windows-dev-tools/tree/master/experiments/image-builder 
 - do we need to install `vagrant plugin install vagrant-vbguest`
+
+# 10/19/2021
+
+- SAC releases gone makes life easier but luther wants even more dev tools
+- kavya joined us !
+- docker desktop -> switch to windows docker containers
+- rancher: helm charts that support windows
+- claudio: image-promoter pushes images up to gcr.io
+- https://github.com/kubernetes/cri-api/blob/master/pkg/apis/runtime/v1/api.proto <-- HostProcess is part of CRI API
+- containernetworking CNI v1 (stable) -> exec to (v2) GRPC
+- Image Builder / Promoter basic setup:
+  - group creation:  https://github.com/kubernetes/k8s.io/pull/400
+  - prow job: https://github.com/kubernetes/test-infra/pull/14833
+  - cloudbuild.yaml file:https://github.com/kubernetes/kubernetes/pull/84058
+- hostProcesses
+  - https://github.com/kubernetes-sigs/cluster-api-provider-azure/pull/1672 and https://github.com/kubernetes-sigs/sig-windows-dev-tools/issues/123 as a follow on for windows dev tools
+- claudio:
+  - dead container vs alive:  
+- image-builder: 
+  - upload and build AZURE 
+    - ansible + packer azure-builder -> saves snap -> VHD  
+  - upload and build in AWS
+    - same for AMIs, spins VM, snapshots as AMI
+  - NOT SAME as hosted image-builder in azure
+- peris containerd / hostprocess doc https://hackmd.io/5rrv64_QQzyhnzf15mZ73Q 
+- claudio will tell jokes next time
