@@ -472,3 +472,10 @@ hypervisorlaunchtype    Auto
   - NOT SAME as hosted image-builder in azure
 - peris containerd / hostprocess doc https://hackmd.io/5rrv64_QQzyhnzf15mZ73Q 
 - claudio will tell jokes next time
+
+# 10/26/2022
+
+- LoadBalancer -> NodePort -> CIP , GKE loadbalancers fall back to nodeports when Loadbalancers fail to find the right pod
+- https://github.com/kubernetes/kubernetes/pull/99287 
+
+
