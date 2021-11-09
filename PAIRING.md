@@ -485,3 +485,8 @@ hypervisorlaunchtype    Auto
 - https://www.youtube.com/watch?v=RQNy1PHd5_A <-- homework for amim 
 - 1.5 years ago, windows and overlay changed the k8s docs about `nodes -> ANY pod` ... `node0 -> pod on node0`
 - https://github.com/kubernetes/enhancements/issues/2578 <-- going over operational readiness
+
+# 11/9/2022
+
+- windows host process prometheus-exporter MR review w james and peri
+- https://github.com/prometheus-community/windows_exporter/pull/864/files
