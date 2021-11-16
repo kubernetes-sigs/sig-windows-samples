@@ -490,3 +490,11 @@ hypervisorlaunchtype    Auto
 
 - windows host process prometheus-exporter MR review w james and peri
 - https://github.com/prometheus-community/windows_exporter/pull/864/files
+
+# 11/16/2022
+- KO for windows https://github.com/google/ko/pull/374/files w jason hall
+- https://github.com/kubernetes/kubernetes/blob/master/test/images/agnhost/Dockerfile_windows#L78
+- syscalls need to be turned on to run some images as hostProcesses
+- symlinks in ko data dir
+  - .git/HEAD vs ldflags git commit... doesnt work TODO
+- @ImJasonH thanks for demoing, FYI kbld https://github.com/vmware-tanzu/carvel-kbld/pull/98 supports ko to
