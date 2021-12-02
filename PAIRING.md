@@ -498,3 +498,10 @@ hypervisorlaunchtype    Auto
 - symlinks in ko data dir
   - .git/HEAD vs ldflags git commit... doesnt work TODO
 - @ImJasonH thanks for demoing, FYI kbld https://github.com/vmware-tanzu/carvel-kbld/pull/98 supports ko to
+
+# 11/16/2022
+
+- claudio http + udp hostProcess tests
+- hostProcess on overlays from onepod -> diff pod (fail?)
+- l2 bridge vs overlay when it comes to operational readiness tests
+- 
