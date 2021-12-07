@@ -504,4 +504,19 @@ hypervisorlaunchtype    Auto
 - claudio http + udp hostProcess tests
 - hostProcess on overlays from onepod -> diff pod (fail?)
 - l2 bridge vs overlay when it comes to operational readiness tests
-- 
+
+# 12/7/2022
+
+- kubernetes sigs GMSA image is only in docker-hub, not in official, promoting it https://github.com/kubernetes-sigs/windows-gmsa/issues/52
+  - need to setup google groups, repos, ...  
+  - test-infra, community, cloudbuild.yaml gcp info 
+  - GMSA 1
+    - required joined domain 
+  - GMSA 2
+    - no need for domain joining if you use a "plugin" 
+  - described by james here
+```
+The gmsa ccg plugins are not publicly available. 
+```
+  - They can be built and used on the host by following the guide here: https://docs.microsoft.com/en-us/windows/win32/api/ccgplugins/nn-ccgplugins-iccgdomainauthcredentials.  
+  - The idea is that you could store credentials in something like keyvault or k8s secrets and then the plugin grabs them and uses them when doing the auth back to the domain.
