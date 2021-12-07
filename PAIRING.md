@@ -510,11 +510,12 @@ hypervisorlaunchtype    Auto
 - kubernetes sigs GMSA image is only in docker-hub, not in official, promoting it https://github.com/kubernetes-sigs/windows-gmsa/issues/52
   - need to setup google groups, repos, ...  
   - test-infra, community, cloudbuild.yaml gcp info 
-  - GMSA 1
+  - GMSA "domain" using host style
     - required joined domain 
-  - GMSA 2
+  - GMSA "domain" or "domainless" using the plugin style
     - no need for domain joining if you use a "plugin" 
-  - described by james here
+    - GMSA host needs to be auth. to the domain, UNLESS you have  
+- described by james here
 ```
 The gmsa ccg plugins are not publicly available. 
 ```
