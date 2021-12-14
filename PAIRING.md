@@ -521,3 +521,9 @@ The gmsa ccg plugins are not publicly available.
 ```
   - They can be built and used on the host by following the guide here: https://docs.microsoft.com/en-us/windows/win32/api/ccgplugins/nn-ccgplugins-iccgdomainauthcredentials.  
   - The idea is that you could store credentials in something like keyvault or k8s secrets and then the plugin grabs them and uses them when doing the auth back to the domain.
+
+
+# 12/14/2021
+- Windows 2022 supported:
+  - 1.23 release notes https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.23.md 
+  - `OSVERSION ?= 1809 1903 1909 2004 20H2 ltsc2022`
