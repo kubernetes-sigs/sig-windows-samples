@@ -527,3 +527,8 @@ The gmsa ccg plugins are not publicly available.
 - Windows 2022 supported:
   - 1.23 release notes https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.23.md 
   - `OSVERSION ?= 1809 1903 1909 2004 20H2 ltsc2022`
+
+# 1/18/2022
+- https://github.com/antrea-io/antrea/issues/2774 ...  use LTSC 2022 or 2019 
+- containerd 1.6+ for host proc containers, 1.5 undefined behaviour w hostproc options
+- ` failed to create shim: hcs::CreateComputeSystem test: The directory name is invalid.: unknown `
