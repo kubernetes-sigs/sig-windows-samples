@@ -532,3 +532,4 @@ The gmsa ccg plugins are not publicly available.
 - https://github.com/antrea-io/antrea/issues/2774 ...  use LTSC 2022 or 2019 
 - containerd 1.6+ for host proc containers, 1.5 undefined behaviour w hostproc options
 - ` failed to create shim: hcs::CreateComputeSystem test: The directory name is invalid.: unknown `
+- hcsdiag.exe
