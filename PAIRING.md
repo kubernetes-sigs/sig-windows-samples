@@ -533,3 +533,7 @@ The gmsa ccg plugins are not publicly available.
 - containerd 1.6+ for host proc containers, 1.5 undefined behaviour w hostproc options
 - ` failed to create shim: hcs::CreateComputeSystem test: The directory name is invalid.: unknown `
 - hcsdiag.exe
+
+# 1/25/2022
+- back to https://github.com/kubernetes/kubernetes/pull/99287 
+- ESIPP tests are skipped for IPVS and i guess they are skipped for sig windows also 
