@@ -537,3 +537,10 @@ The gmsa ccg plugins are not publicly available.
 # 1/25/2022
 - back to https://github.com/kubernetes/kubernetes/pull/99287 
 - ESIPP tests are skipped for IPVS and i guess they are skipped for sig windows also 
+
+# 2/8/2022
+
+- cert-manager !!! https://github.com/cert-manager/cert-manager/issues/4700 
+  - issuer -> cert manager -> certificate -> secret
+  - note in CAPI, cert-manager is only used on mgmt clusters, so this doesnt effect us
+ 
