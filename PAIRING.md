@@ -543,4 +543,11 @@ The gmsa ccg plugins are not publicly available.
 - cert-manager !!! https://github.com/cert-manager/cert-manager/issues/4700 
   - issuer -> cert manager -> certificate -> secret
   - note in CAPI, cert-manager is only used on mgmt clusters, so this doesnt effect us
+
+# 3/8/2022
+
+- https://github.com/kubernetes-sigs/sig-windows-dev-tools/pull/184 , probably not needed, README update
+
+
+
  
