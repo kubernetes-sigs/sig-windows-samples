@@ -78,4 +78,4 @@ spec:
         resources: {}
       restartPolicy: Always
       nodeSelector:
-        beta.kubernetes.io/os: windows
+        kubernetes.io/os: windows

@@ -40,6 +40,6 @@ spec:
             cpu: .1
             memory: 300m
       nodeSelector:
-        beta.kubernetes.io/os: {{ .Values.mssql.os }} 
+        kubernetes.io/os: {{ .Values.mssql.os }} 
       restartPolicy: Always      
 {{- end }}

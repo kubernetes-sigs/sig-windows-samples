@@ -31,4 +31,4 @@ spec:
             cpu: .1
             memory: 300m
       nodeSelector:
-        beta.kubernetes.io/os: windows
+        kubernetes.io/os: windows
