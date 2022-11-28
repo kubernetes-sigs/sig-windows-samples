@@ -37,5 +37,5 @@ spec:
             cpu: .1
             memory: 300m
       nodeSelector:
-        beta.kubernetes.io/os: linux
+        kubernetes.io/os: linux
       # For production, you would also need a persistent volume at /var/opt/mssql

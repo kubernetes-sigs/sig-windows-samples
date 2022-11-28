@@ -41,7 +41,7 @@ subjects:
 
 ```powershell
 kubectl create -f tiller-rbac.yaml
-helm init --node-selectors "beta.kubernetes.io/os=linux" --upgrade --service-account tiller
+helm init --node-selectors "kubernetes.io/os=linux" --upgrade --service-account tiller
 ```
 
 TL;DR service catalog
@@ -77,7 +77,7 @@ In each of these, add:
 
 ```yaml
       nodeSelector:
-        beta.kubernetes.io/os: linux
+        kubernetes.io/os: linux
 ```
 
 `kubectl edit deploy -n catalog catalog-catalog-controller-manager`
