@@ -548,6 +548,12 @@ The gmsa ccg plugins are not publicly available.
 
 - https://github.com/kubernetes-sigs/sig-windows-dev-tools/pull/184 , probably not needed, README update
 
+# 1/3/2023 
+
+What golang windows librarys are used for conatiners ? 
+- "github.com/Microsoft/hcsshim"
+- "github.com/Microsoft/hcsshim/hcn"
+- 
 
 
  
