@@ -1,5 +1,6 @@
 # Sig windows pairing/hacking notes
 
+
 ## 3/9/2021
 
 ### https://github.com/kubernetes/kubernetes/pull/96616/files
@@ -555,5 +556,8 @@ What golang windows librarys are used for conatiners ?
 - "github.com/Microsoft/hcsshim/hcn"
 - 
 
-
- 
+## 2/2023
+- Where does BootID come from ?
+  - https://github.com/kubernetes/kubernetes/blob/d529b7e10b67c2f11ddd8e646f6845c1a1c04635/pkg/kubelet/winstats/perfcounter_nodestats.go#L293
+    - Windows Registry KEY has to be set... WHO SETS THAT KEY????????????????   
+    - Maybe it depends on reboots that happened
